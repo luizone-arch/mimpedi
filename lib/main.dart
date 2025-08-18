@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
             child: Padding(padding: const EdgeInsets.all(18.0),
               child:Column(
                 children: [
-                  Text("Nome: ${u.nome}"),
+                  Text("Nome:  ${u.nome}"),
                   Text("Código: ${u.codigo}"),
                   Text("Login: ${u.login}"),
                   Text("Senha: ${u.senha}")
