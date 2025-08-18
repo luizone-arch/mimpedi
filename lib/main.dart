@@ -13,21 +13,21 @@ class MyApp extends StatelessWidget {
 
     Usuario u = Usuario(
       codigo: 1,
-      login: "COCU DAMASCO",
-      nome: "COCU DAMASCENO",
-      senha: "@senhaforte321"
+      login: "Rodolfo123",
+      nome: "Rodolfo",
+      senha: "@senhaforte123"
     );
 
     return MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: const Text("Meus Dados: ")
+              title: const Text("Meus Dados: ")
           ),
           body: Center(
             child: Padding(padding: const EdgeInsets.all(18.0),
-              child:Column(
+              child: Column(
                 children: [
-                  Text("Nome:  ${u.nome}"),
+                  Text("Nome: ${u.nome}"),
                   Text("Código: ${u.codigo}"),
                   Text("Login: ${u.login}"),
                   Text("Senha: ${u.senha}")
@@ -39,5 +39,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 

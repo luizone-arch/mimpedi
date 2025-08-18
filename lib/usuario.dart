@@ -1,34 +1,13 @@
 class Usuario{
-  int? _codigo;
-  String? _nome;
-  String? _login;
-  String? _senha;
+  int? codigo;
+  String? nome;
+  String? login;
+  String? senha;
 
-  Usuario({String? nome, int? codigo, String? senha, String? login}){
-    _senha = senha;
-    _codigo = codigo;
-    _nome = nome;
-    _login = login;
-  }
-
-  //getters
-  //escrita do get tradicional
-  String? get login{
-    return _login;
-  }
-
-  String? get nome => _nome;
-  String? get senha => _senha;
-  int? get codigo => _codigo;
-
-  //setters
- //escrita do set tradicional
-set login(String? login){
-  _login = login;
-
-}
-
-set nome(String? nome) => _nome = nome;
-set senha(String? senha) => _senha = senha;
-set codigo(int? codigo) => _codigo = codigo;
+  Usuario({
+    this.nome,
+    this.codigo,
+    this.senha,
+    this.login
+  });
 }
