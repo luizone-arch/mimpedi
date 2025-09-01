@@ -10,6 +10,7 @@ class TelaLogin extends StatelessWidget{
   final TextEditingController senhaController = TextEditingController();
 
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,6 @@ class TelaLogin extends StatelessWidget{
             ),
             const SizedBox(height: 40),
             ElevatedButton(onPressed: () async{
-
 
               final sucesso = await UsuarioDAO.autenticar(usuarioController.text, senhaController.text);
 
