@@ -1,73 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:mimpedir/telas/tela_cad_restaurante.dart';
 
-class TelaHome extends StatelessWidget {
+class TelaHome extends StatelessWidget{
   TelaHome({super.key});
 
   @override
-  State<TelaHome> createState() => TelaHomeState();
-}
-class TelaHomeState extends State<TelaHome>{
-  List<Restaurante> restaurantes = [];
-
-  @override
-  void initState(){
-    super.initState();
-    carregarRestaurantes();
-  }
-  future<void> carregarRestaurantes() async{
-    final lista = await RestauranteDAO.listarTodos(;
-    setState((){
-      restaurantes = lista;
-    });
-  }
-
-    @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-        title: const Text("Lista de Restaurantes "),
-       actions: [
-         IconButton(
-        onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => TelaCadRestaurante()));
-
-    },
-      icon: Icon(Icons.add)
-    )
-        ],
-    ),
-    body: Padding(padding: const EdgeInsets.all(10),
-    child: ListView.builder(
-    itemCount: restaurantes.length,
-    itemBuilder: (context, index){
-      final r = restaurantes[index];
-    return Card(
-    margin: EdgeInsets.symmetric(vertical: 8),
-    child: ListTile(
-    title: Text(r.nome ?? 'sem nome'),
-    subtitle: Text('ID: ${r.codigo}'),
-      trailing: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-            IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => TelaCadRestaurante()))
-            }, icon: Icon(Icons.edit)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.delete)),
-        ],
-      ),
-    ), // ListTile
-    ); // Card
-    }
-    ), // ListView.builder
-    ),
-      floatingActionButton: FloatingActionButton(
-    onPressed: (){
-      Navigator.push(context, MaterialPageRoute(builder: (contex) => TelaCadRestaurante()));
-      },
-      child: Icon(Icons.add)
-    ),
-
-    ); // Scaffold
-    }
-    }
+        appBar: AppBar(title: const Text('Tela Home')),
+        body: Padding(padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Lista de Restaurantes: "),
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TelaCadRestaurante()));
+              }, child: Text("Cadastrar Restaurantes")),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:
+                [
+                  Column(
+                    children: [
+                      Text("Meu restaurante"),
+                      Text("Comida Mexicana")
+                    ],
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(onPressed: (){}, child: Text("Excluir")),
+                  SizedBox(width: 10),
+                  ElevatedButton(onPressed: (){}, child: Text("Editar")),
+                ],
+              ),
+            ],
+          ),
+        )
+    );
+  }
+}
