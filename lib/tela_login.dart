@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'tela_home.dart';
-import 'package:mimpedir/telas/tela_login.dart';
+import 'package:mimpedir/tela_login.dart';
 import 'package:mimpedir/banco/usuario_dao.dart';
 
 class TelaLogin extends StatelessWidget{

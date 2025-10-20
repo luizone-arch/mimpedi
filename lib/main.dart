@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mimpedir/telas/tela_login.dart';
+import 'package:mimpedir/tela_login.dart';
 
 void main() {
   runApp(const MyApp());
